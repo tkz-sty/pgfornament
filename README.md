@@ -5,18 +5,23 @@ Release 1.1 2020/04/06
 ## Description
 
 This package allows the drawing of Vectorian ornaments (196) with pgf/tikz.
-The documentation presents the syntax and parameters of the macro "pgfornament".
-About tikzrput package:
-This package contains the rput macro that can be used to place objects. This macro does similar actions of the rput macro from pstricks. Here this macro needs tikz to work.
-With this new version comes a new family of ornaments.
-Chennan Zhang drew the motifs using a CAD application, re-drew them in TikZ, and granted permission for these to be turned into a library pgfornament-han suitable for use with the pgfornament package by LianTze Lim.
-It is now possible to use directly the library for Chinese traditional motifs and patterns.
+The documentation presents the syntax and parameters of the macro `pgfornament`.
 
-## About tikzrput package
+## News
+
+With this new version comes a new family of ornaments. Chennan Zhang drew
+the motifs using a CAD application, re-drew them in TikZ, and granted permission
+for these to be turned into a library `pgfornament-han` suitable for use with
+the `pgfornament` package by LianTze Lim.
+
+It is now possible to use directly the library for Chinese traditional motifs
+and patterns.
+
+## About tikzrput package:
 
 This package contains the `\rput` macro that can be used to place objects. This
 macro does similar actions of the `\rput` macro from pstricks. Here this macro
-needs `tikz` to work.
+needs tikz to work.
 
 ## Licence
 
@@ -56,12 +61,13 @@ Documentations for `pgfornament` and `tikzrput`  are available on CTAN and in yo
 
 ## History
 
-- v 1.00 Add the Han ornanments and some new macros. Add some examples to the  documentation. Thanks to Pablo Gonzáles L to help me with "Git".
+- v 1.00 Add the Han ornanments and some new macros. Add some examples to the
+ documentation. Thanks to Pablo Gonzáles L to help me with "Git".
 
 - v0.21: `pgfornament.sty`, Christian Feuersänger thank you for seeing this bug
-ornament/at now replaces the key at (conflict with at from pgf)
+ ornament/at now replaces the key at (conflict with at from pgf).
 
 - v0.21: documentation: Peter Zimmermann thank you for seeing some bugs in the
-examples .
+ examples.
 
-- New section Problem to describe some difficulties
+- New section Problem to describe some difficulties.

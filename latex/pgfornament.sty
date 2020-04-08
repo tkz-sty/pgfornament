@@ -9,7 +9,7 @@
 % version 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status “maintained”.
-% 
+%
 % The Current Maintainer of this work is Alain Matthes.
 %---------%---------%---------%---------%---------%---------%---------%---------
 %  First version created by Alain Matthes le 2012-02-22.
@@ -18,8 +18,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \RequirePackage{tikz,pgfopts}
 \ProvidesPackage{pgfornament}[2020/04/06 v1.1 vector ornaments]
-\gdef\pgfOrnamentsObject{pgflibraryvectorian.code.tex} 
-\gdef\OrnamentsFamily{vectorian}  
+\gdef\pgfOrnamentsObject{pgflibraryvectorian.code.tex}
+\gdef\OrnamentsFamily{vectorian}
 \pgfkeys{%
   /pgfOrnaments/object/.cd,
   /pgfOrnaments/object/.code = \gdef\pgfOrnamentsObject{pgflibrary#1.code.tex}
@@ -27,10 +27,10 @@
 }
 \ProcessPgfOptions{/pgfOrnaments}
 \input{\pgfOrnamentsObject}%
-%---------%---------%---------%---------%---------%---------%---------%-------- 
+%---------%---------%---------%---------%---------%---------%---------%--------
 %    tools
-%---------%---------%---------%---------%---------%---------%---------%-------- 
-\makeatletter 
+%---------%---------%---------%---------%---------%---------%---------%--------
+\makeatletter
 \newenvironment{newfamily}[1][vectorian]{%
  \global\let\SavedOrnamentsFamily\OrnamentsFamily
  \newpgfornamentfamily{#1}
@@ -50,7 +50,7 @@
 \def\c ##1 ##2 ##3 ##4 ##5 ##6 {%
 \pgfpathcurveto{\p{##1}{##2}}{\p{##3}{##4}}{\p{##5}{##6}}}%
 \@@input \OrnamentsFamily#1.pgf%
-\endgroup}%  
+\endgroup}%
 
 \newcommand{\callornament}[1]{%
 \begingroup
@@ -77,8 +77,8 @@
 % symmetry=h   : true/false (symétrie horizontale, false par défaut)
 % symmetry=v   : true/false (symétrie verticale,   false par défaut)
 % symmetry=c   : true/false (symétrie centrale h+v,false par défaut)
-%---------%---------%---------%---------%---------%---------%---------%-------- 
-\tikzset{pgfornamentstyle/.style={}}%  
+%---------%---------%---------%---------%---------%---------%---------%--------
+\tikzset{pgfornamentstyle/.style={}}%
 \pgfkeys{%
   /ornament/.cd,
   scale/.code         =  {\def\pgfornamentscale{#1}},
@@ -87,13 +87,13 @@
   color/.code         =  {\def\pgfornamentcolor{#1}},
   opacity/.code       =  {\def\pgfornamentopacity{#1}},
   anchor/.code        =  {\def\pgfornamentanchor{#1}},
-  ydelta/.code        =  {\def\pgfornamentydelta{#1}}, 
+  ydelta/.code        =  {\def\pgfornamentydelta{#1}},
   symmetry/.is choice,
-  symmetry/v/.code     = {\tikzset{pgfornamentstyle/.append  
+  symmetry/v/.code     = {\tikzset{pgfornamentstyle/.append
      style={cm={-1,0,0,1,(0,0)}}}},
-  symmetry/c/.code     = {\tikzset{pgfornamentstyle/.append 
+  symmetry/c/.code     = {\tikzset{pgfornamentstyle/.append
      style={cm={-1,0,0,-1,(0,0)}}}},
-  symmetry/h/.code     = {\tikzset{pgfornamentstyle/.append 
+  symmetry/h/.code     = {\tikzset{pgfornamentstyle/.append
      style={cm={1,0,0,-1,(0,0)}}}},
   symmetry/none/.code  = {\tikzset{pgfornamentstyle/.append style={cm={1,0,0,1,(0,0)}}}}%
 }%
@@ -110,23 +110,23 @@
    ydelta   =  0 pt,
    symmetry =  none ,
    anchor   =  center
-   }% 
+   }%
 \pgfqkeys{/ornament}{#1}%
-\ifx\pgfornamentcolor\empty 
+\ifx\pgfornamentcolor\empty
     \tikzset{pgfornamentstyle/.append style={}}%
-\else 
+\else
     \tikzset{pgfornamentstyle/.append style={color=\pgfornamentcolor}}%
 \fi
-\ifx\pgfornamentopacity\empty 
+\ifx\pgfornamentopacity\empty
     \tikzset{pgfornamentstyle/.append style={}}%
-\else 
+\else
     \tikzset{pgfornamentstyle/.append style={opacity=\pgfornamentopacity}}%
 \fi
 \ifx\pgfornamentwidth\empty
    \else
    \@pgfornamentDim{#2}
    \pgfmathsetmacro{\pgfornamentscale}{\pgfornamentwidth/\@pgfornamentX bp}%
-\fi  
+\fi
 \ifx\pgfornamentheight\empty
    \else
     \@pgfornamentDim{#2}
@@ -143,7 +143,7 @@ baseline={([yshift=\pgfornamentydelta]current bounding box.\pgfornamentanchor)},
 
 \gdef\ornamenttopos{.5}
 \gdef\ornamenttoanchor{center}
-\gdef\ornamenttosymmetry{none} 
+\gdef\ornamenttosymmetry{none}
 \tikzset{options default/.style={anchor=center,
                                  sloped,
                                  allow upside down,
@@ -151,44 +151,44 @@ baseline={([yshift=\pgfornamentydelta]current bounding box.\pgfornamentanchor)},
 \tikzset{ornament/at/.code={\def\ornamenttopos{#1}},
          options/.style={options default,#1},
          ornament symmetry/.code={\def\ornamenttosymmetry{#1}},
-         node anchor/.code={\def\ornamenttoanchor{#1}}, 
+         node anchor/.code={\def\ornamenttoanchor{#1}},
          ornament/.style={%
          to path={%
 \pgfextra{%
       \tikz@scan@one@point\pgfutil@firstofone(\tikztostart)\relax
          \pgf@xa=\pgf@x
-         \pgf@ya=\pgf@y 
+         \pgf@ya=\pgf@y
       \tikz@scan@one@point\pgfutil@firstofone(\tikztotarget)\relax
          \pgf@xb=\pgf@x
          \pgf@yb=\pgf@y
          \advance\pgf@xa by-\pgf@xb
          \advance\pgf@ya by-\pgf@yb
       \pgfmathveclen{\pgf@xa}{\pgf@ya}%
-      \global\let\ornamentlen\pgfmathresult} 
+      \global\let\ornamentlen\pgfmathresult}
        --  node [pos=\ornamenttopos,options,
               anchor=\ornamenttoanchor]{%
         \pgfornament[width    = \ornamentlen,
-                 symmetry=\ornamenttosymmetry]{#1}}  
-            (\tikztotarget)\tikztonodes %end pgfextra    
+                 symmetry=\ornamenttosymmetry]{#1}}
+            (\tikztotarget)\tikztonodes %end pgfextra
     }% end to path
   }% end style
 }% end \tikzset
 
 \def\pgfornamenthline#1#2#3#4{%
   \pgfextractx{\pgf@x}{\pgfpointanchor{#1}{#3 east}}
-  \pgf@xa=\pgf@x 
-  \pgfextractx{\pgf@x}{\pgfpointanchor{#2}{#3 west}} 
+  \pgf@xa=\pgf@x
+  \pgfextractx{\pgf@x}{\pgfpointanchor{#2}{#3 west}}
   \pgf@xb=\pgf@x
   \advance\pgf@xb by -\pgf@xa
-\node[inner sep=0pt] at ($(#1.#3 east)!.5!(#2.#3 west)$) {\pgfornament[width=\pgf@xb]{#4}} ;  
+\node[inner sep=0pt] at ($(#1.#3 east)!.5!(#2.#3 west)$) {\pgfornament[width=\pgf@xb]{#4}} ;
 }
 \def\pgfornamentvline#1#2#3#4{%
   \pgfextracty{\pgf@y}{\pgfpointanchor{#1}{south #3}}
-  \pgf@ya=\pgf@y 
-  \pgfextracty{\pgf@y}{\pgfpointanchor{#2}{north #3}} 
+  \pgf@ya=\pgf@y
+  \pgfextracty{\pgf@y}{\pgfpointanchor{#2}{north #3}}
   \pgf@yb=\pgf@y
   \advance\pgf@yb by -\pgf@ya
-\node[inner sep=0pt,rotate=90] at ($(#1.south #3)!.5!(#2.north #3)$) {\pgfornament[width=\pgf@yb]{#4}} ;  
+\node[inner sep=0pt,rotate=90] at ($(#1.south #3)!.5!(#2.north #3)$) {\pgfornament[width=\pgf@yb]{#4}} ;
 }%
 \def\getornamentlength#1#2#3#4{%
  \pgfpointdiff{\pgfpointanchor{#1}{#2}}%
@@ -196,7 +196,7 @@ baseline={([yshift=\pgfornamentydelta]current bounding box.\pgfornamentanchor)},
    \pgf@xa=\pgf@x
    \pgf@ya=\pgf@y
    \pgfmathveclen{\pgf@xa}{\pgf@ya}%
-   \global\let\ornamentlen\pgfmathresult 
+   \global\let\ornamentlen\pgfmathresult
 }%
 \def\getornamentangle#1#2#3{%
   \pgfpointdiff{\pgfpointanchor{#2}{center}}{\pgfpointanchor{#3}{center}}%

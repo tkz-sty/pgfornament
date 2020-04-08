@@ -1,0 +1,6 @@
+The correct locations in the TDS structure for distribution are:
+doc/*.*          -> TDS:doc/latex/pgfornament/*.*
+README.md        -> TDS:doc/latex/pgfornament/README.md
+code/latex/*.*   -> TDS:tex/latex/pgfornament/*.*
+code/generic/*.* -> TDS:tex/generic/pgfornament/*.*
+Thanks

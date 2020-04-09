@@ -61,13 +61,14 @@ Documentations for `pgfornament` and `tikzrput`  are available on CTAN and in yo
 
 ## History
 
-- v 1.00 Add the Han ornanments and some new macros. Add some examples to the
- documentation. Thanks to Pablo Gonzáles L to help me with "Git".
+- v1.00: Add the Han ornanments and some new macros. Add some examples to the documentation. Thanks to Pablo González L to help me with "Git".
 
-- v0.21: `pgfornament.sty`, Christian Feuersänger thank you for seeing this bug
- ornament/at now replaces the key at (conflict with at from pgf).
+- v0.21: `pgfornament.sty`, Christian Feuersänger thank you for seeing this bug ornament/at now replaces the key at (conflict with at from pgf).
 
-- v0.21: documentation: Peter Zimmermann thank you for seeing some bugs in the
- examples.
+- v0.21: documentation: Peter Zimmermann thank you for seeing some bugs in the  examples.
 
 - New section Problem to describe some difficulties.
+
+## Author
+
+Alain Matthes, 5 rue de Valence, Paris 75005, al (dot) ma (at) mac (dot) com

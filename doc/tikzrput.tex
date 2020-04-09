@@ -185,34 +185,46 @@ urlcolor   = blue}
 \noindent\lefthand\ (Version 1.1)
 
 This document describes the \LaTeX\ package \emph{\docpkg{tikzrput}}.
-It also provides some examples and comments on the package's use. Firstly, I would like to thank  a lot of contributors of the site tex.stackexchange \sidenote{ \url{ http://tex.stackexchange.com/ }}. The idea to create this package comes from a question on tex.stackexchange. I would like to thanks also \textbf{Till Tantau}  for creating the wonderful tool \href{http://sourceforge.net/projects/pgf/}{Ti\emph{k}Z}.
-
+It also provides some examples and comments on the package's use. Firstly, I
+would like to thank  a lot of contributors of the site tex.stackexchange
+\sidenote{\url{https://tex.stackexchange.com/}}. The idea to create this
+package comes from a question on tex.stackexchange. I would like to thanks also
+\textbf{Till Tantau}  for creating the wonderful tool
+\href{https://github.com/pgf-tikz/pgf}{Ti\emph{k}Z}.
 
 \end{abstract}
 
-
-
 \section{How to install the package} % (fold)
 \label{sec:how_to_install}
-With \docdist{TeXLive}, if you need to install it by yourself, just download the  file \docpkg{tikzrput.sty}, and place it in your TDS directory (~/texmf/tex/latex for Unix-like systems).
 
-With \docdist{MiKTeX}, copy the  file \docpkg{tikzrput.sty} into \verb+C:\texmf\tex\latex+, then
-run {\color{red}\texttt{MiKTeX Options}}  . In the {\color{black}\texttt{File name database}}  section, click on  {\color{red}\texttt{Refresh now}}.
+With \docdist{TeXLive}, if you need to install it by yourself, just download the
+file \docpkg{tikzrput.sty}, and place it in your TDS directory
+(\verb+~/texmf/tex/latex+ for Unix-like systems).
+
+With \docdist{MiKTeX}, copy the  file \docpkg{tikzrput.sty} into
+\verb+C:\texmf\tex\latex+, then run {\color{red}\texttt{MiKTeX Options}}.
+In the {\color{black}\texttt{File name database}}  section, click on  {\color{red}\texttt{Refresh now}}.
 % section how_to_install (end)
-
 
 \section{How to use the package} % (fold)
 \label{sec:how_to_use}
-You only need to add \\
-{\color{black}\verb+\usepackage{tikzrput}+} in your preamble. The  tikzrput package loads \TIKZ. If \docpkg{pstricks}\index{pstricks} is already loaded, the macro \Imacro{rput} is unchanged.  The macro \doccmd{rput} of this package is only active with {\color{red}\texttt{pdflatex}\index{pdflatex}}.
 
+You only need to add \par
+{\color{black}\verb+\usepackage{tikzrput}+} in your preamble. The  tikzrput
+package loads \TIKZ. If \docpkg{pstricks}\index{pstricks} is already loaded, the
+macro \Imacro{rput} is unchanged. The macro \doccmd{rput} of this package is
+only active with {\color{red}\texttt{pdflatex}\index{pdflatex}}.
 
 \section{The macro} % (fold)
 \label{sec:the_main_macro}
-The \doccmd{rput} macro can be used to place objects.
-The simple form of the \doccmd{rput} macro used below works like the \Verb|\put| macro of the \LaTeX\  \docenv{picture} \index{picture} environment and gives you the ability to place and rotate whatever you want.
 
-Below you can see the common useage of this command. \Verb|\rput(x,y){text}| to print text at the ref point \Verb|(x,y)|.
+The \doccmd{rput} macro can be used to place objects.
+The simple form of the \doccmd{rput} macro used below works like the \Verb|\put|
+macro of the \LaTeX\  \docenv{picture} \index{picture} environment and gives you
+the ability to place and rotate whatever you want.
+
+Below you can see the common useage of this command. \Verb|\rput(x,y){text}| to
+print text at the ref point \Verb|(x,y)|.
 In the following example the usage of this command is shown practically.
 
 \begin{tkzexample}[code only]
@@ -236,15 +248,13 @@ baseline->\rput(12,1){%
 
 \vspace{12pt}
 
-
-"(x,y)" is the position where "stuff" will be placed."Refpoint" gives the reference point of stuff (text or picture and so on).
+"(x,y)" is the position where "stuff" will be placed."Refpoint" gives the
+reference point of stuff (text or picture and so on).
 
 \begin{tkzexample}[latex=5cm]
 baseline->
 \rput{45}(12,0){\fbox{Stuff}}
 \end{tkzexample}
-
-
 
 The specifications of the \Verb|\rput| command is:
 \begin{docspec}
@@ -252,17 +262,25 @@ The specifications of the \Verb|\rput| command is:
  \color{blue!50!black} \doccmd{rput[\docopt{options}]\{\docopt{rotation}\}(\docarg{refpoint})\{\docarg{stuff}\}}
 \end{docspec}
 
-The first mandatory argument (in parenthesis) is the coordinate pair of the point where the stuff is placed.\\
-The second mandatory argument (in curly braces) is the stuff to place.\\
+The first mandatory argument (in parenthesis) is the coordinate pair of the
+point where the stuff is placed.\par
 
-The first optional argument is given in brackets and it determines the position of the bounding box of the object to place with respect to the "refpoint" (in parenthesis). The admissible values are mc, t, tl, tr, b, bl, br and B, Br, Bl. The default is mc meaning middle – center , t is for top of the box, b for bottom and B for baseline; r and l are for right and left. We can call these points, the anchors.\\
+The second mandatory argument (in curly braces) is the stuff to place.\par
 
-The second optional argument is given in curly braces. It is a number that stands for the rotation angle.
+The first optional argument is given in brackets and it determines the position
+of the bounding box of the object to place with respect to the "refpoint" (in
+parenthesis). The admissible values are mc, t, tl, tr, b, bl, br and B, Br, Bl.
+The default is mc meaning middle – center , t is for top of the box, b for
+bottom and B for baseline; r and l are for right and left. We can call these
+points, the anchors.\par
 
+The second optional argument is given in curly braces. It is a number that
+stands for the rotation angle.
 
-What is the  baseline ?
+What is the  baseline?
 
-As you probably know \TeX\ puts all its objects in boxes. A box has a baseline that determines height and depth.
+As you probably know \TeX\ puts all its objects in boxes. A box has a baseline
+that determines height and depth.
 \begin{marginfigure}
   \centering
     \includegraphics[width=1\textwidth]{baseline.png}
@@ -270,13 +288,18 @@ As you probably know \TeX\ puts all its objects in boxes. A box has a baseline t
   \label{fig:baseline}
 \end{marginfigure}
 
- \TeX\ uses the baselines for fixing together the boxes to others. A box has ten anchors:\\
- -  mc the middle-center, the center point,\\
- -  bl br tl tr are the 4 corners  (for bottom left and bottom right top left and top right),\\
- -  two anchors Bl and Br (Baseline left and right),\\
- -  the vertical line through the middle-center defines three other points t, B and b on the top line, the baseline and the bottom line.
+\TeX\ uses the baselines for fixing together the boxes to others. A box has ten
+anchors:\par
+-  mc the middle-center, the center point,\par
+-  bl br tl tr are the 4 corners  (for bottom left and bottom right top left
+and top right),\par
+-  two anchors Bl and Br (Baseline left and right),\par
+-  the vertical line through the middle-center defines three other points t, B
+and b on the top line, the baseline and the bottom line.
 
-\doccmd{rput} command will place the box defined by using the reference point and placing on this, one of the ten anchors box.
+\doccmd{rput} command will place the box defined by using the reference point
+and placing on this, one of the ten anchors box.
+
 \begin{marginfigure}
   \centering
     \includegraphics[width=1\textwidth]{TeX_box.png}
@@ -313,23 +336,22 @@ Available anchors:
   \label{tab:pgfornament-options}
 \end{table}
 
- The angle of \docopt{rotation} is expressed in degrees...\\
- The \docarg{refpoint} is defined by two coordinates \Verb|(x,y)|.
+The angle of \docopt{rotation} is expressed in degrees...\par
+The \docarg{refpoint} is defined by two coordinates \Verb|(x,y)|.
 % subsection the_options (end)
-
 
 \newpage
 
 \section{Examples} % (fold)
 \label{sec:examples}
+
 \subsection{ex 1 Ornaments patterns} % (fold)
 \label{sub:ex_1}
-
 
 \begin{tkzexample}[code only,small]
 \hspace{1cm}%
 \rput[r](-3pt,3pt){\pgfornament[scale=.2]{72}}
-  		{Ornaments patterns}%
+        {Ornaments patterns}%
 \rput[l](3pt,3pt){\large\pgfornament[scale=.2]{73}}
 \end{tkzexample}
 \begin{marginfigure}
@@ -354,7 +376,7 @@ Available anchors:
 \usepackage{pgfornament}
 \begin{document}
 \tikzset{pgfornamentstyle/.style={%
-		draw = Periwinkle,
+        draw = Periwinkle,
         fill = SpringGreen}}
 \unitlength=1cm
 \begin{picture}(10,10)%
@@ -362,14 +384,14 @@ Available anchors:
    \put(0,0){\framebox(10,10){%
    \rput[tl](-3,5){\pgfornament[width=6cm]{71}}%
    \rput[bl](-3,-5){\pgfornament[width=6cm,
-   								symmetry=h]{71}}%
+                                symmetry=h]{71}}%
    \rput[tl](-5,5){\pgfornament[width=2cm]{63}}%
    \rput[tr](5,5){\pgfornament[width=2cm,
-   							   symmetry=v]{63}}%
+                               symmetry=v]{63}}%
    \rput[bl](-5,-5){\pgfornament[width=2cm,
-   							     symmetry=h]{63}}%
+                                 symmetry=h]{63}}%
    \rput[br](5,-5){\pgfornament[width=2cm,
-   								symmetry=c]{63}}%
+                                symmetry=c]{63}}%
    \rput[bl]{-90}(-5,3){\pgfornament[width=6cm]{46}}%
    \rput[bl]{90}(5,-3){\pgfornament[width=6cm]{46}}%
    \rput(0,0){\Huge \color{MidnightBlue} Ornaments}%
@@ -381,10 +403,10 @@ Available anchors:
 \end{document}
 \end{tkzexample}
 \begin{marginfigure}
-	  \centering
-	    \includegraphics[width=1\textwidth]{ornaments.png}
-	  \caption{caption}
-	  \label{fig:ornaments}
+      \centering
+        \includegraphics[width=1\textwidth]{ornaments.png}
+      \caption{caption}
+      \label{fig:ornaments}
 \end{marginfigure}
 % subsection ex_2_blue_ornament (end)
 
@@ -425,13 +447,14 @@ Available anchors:
        \color{MidnightBlue}%
        \rput[b]{45}(2,2){\large \textbf{line}}
      \end{picture}%
-   	  \caption{with picture}
-   	  \label{fig:picture}
+      \caption{with picture}
+      \label{fig:picture}
 \end{marginfigure}
 % subsection ex3_picture (end)
 
 \subsection{ex 4 Tikzpicture} % (fold)
 \label{sub:ex_4_tikzpicture}
+
 \begin{tkzexample}[code only,small]
 \documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -462,70 +485,70 @@ baseline%
  \rput (2,2){Perfect}%
 \end{tikzpicture}%
 baseline%
-   	  \caption{with tikzpicture}
-   	  \label{fig:tikzpicture}
+      \caption{with tikzpicture}
+      \label{fig:tikzpicture}
 \end{marginfigure}
 % subsection ex_4_tikzpicture (end)
 \newpage
 \subsection{ex 5 From pstricks doc} % (fold)
 \label{sub:ex_5_from_pstricks_doc}
 \begin{marginfigure}
-	 \begin{tikzpicture}[baseline=(current bounding box.north)]
-	      \draw[help lines] (-1,0) grid (1,5) ;
-	 \foreach \x/\y in {0/5,-1/3,1/2,0.5/1} {%
-	      \rput(\x,\y ){\tikz\draw[fill=red] circle(2pt);};}
-	\rput(0,5){Center,Middle}
-	\rput[bl](-1,3){$\underbrace{\text{bottom,left}}_{\text{Really!}}$}
-	\rput[Br](1,2){$\underbrace{\text{Baseline,right}}_{\text{Really!}}$}
-	\rput[tr]{45}(0.5,1)
-	{\parbox{5cm}{\flushright Rotated\\
-	by $45^{\circ}$}}
-	\end{tikzpicture}
-   	  \caption{from pstricks}
-   	  \label{fig:from pstricks}
+     \begin{tikzpicture}[baseline=(current bounding box.north)]
+          \draw[help lines] (-1,0) grid (1,5) ;
+     \foreach \x/\y in {0/5,-1/3,1/2,0.5/1} {%
+          \rput(\x,\y ){\tikz\draw[fill=red] circle(2pt);};}
+    \rput(0,5){Center,Middle}
+    \rput[bl](-1,3){$\underbrace{\text{bottom,left}}_{\text{Really!}}$}
+    \rput[Br](1,2){$\underbrace{\text{Baseline,right}}_{\text{Really!}}$}
+    \rput[tr]{45}(0.5,1)
+    {\parbox{5cm}{\flushright Rotated\\
+    by $45^{\circ}$}}
+    \end{tikzpicture}
+      \caption{from pstricks}
+      \label{fig:from pstricks}
 \end{marginfigure}
-	As we have already seen, the \Verb+{\rput}+ macro can be used to place objects.
-	The second mandatory argument (in curly braces) is the stuff to place the first
-	mandatory argument (in parenthesis) is the coordinate pair of the point where
-	the stuff is placed.
-	Now we turn to the optional arguments of the \Verb+{\rput}+ macro.
-	The first one is given in brackets. It determines the justification of the
-	bounding box of the object to place with respect to the point given in paren-
-	thesis. The admissible values are the same as the values for the option origin
-	of the \verb+{\includegraphics}+ macro. For an instance \Verb+{[br]}+ for bottom-right.
-	The default is mc meaning middle - center.
-	The second optional argument is given in curly braces just before the left
-	parenthesis. It is a number that stands for the rotation angle as illustrated in
-	the last instance of the \Verb+{\rput}+ macro on the slide.
-	The two optional arguments make \Verb+{\rput}+ more
-	exible than the \Verb+{\put}+ macro
-	of the picture environment.
-	\rput[b](-2,0){%
-	\begin{tikzpicture}[%
-		every node/.style={inner sep=0pt}]
-	  \tikzset{image/.style={circle,
-	                         fill=red,
-	                         minimum size = 4pt,
-	                         inner sep    = 0pt,
-	                         outer sep    = 1pt}
-	                         }
-	\node[inner sep = 1cm] (wrapper){\tikz
-	\node(image) {\pgfornament[scale=1.5,opacity=0.2]{1}};};
-	\end{tikzpicture}}
+    As we have already seen, the \Verb+{\rput}+ macro can be used to place objects.
+    The second mandatory argument (in curly braces) is the stuff to place the first
+    mandatory argument (in parenthesis) is the coordinate pair of the point where
+    the stuff is placed.
+    Now we turn to the optional arguments of the \Verb+{\rput}+ macro.
+    The first one is given in brackets. It determines the justification of the
+    bounding box of the object to place with respect to the point given in paren-
+    thesis. The admissible values are the same as the values for the option origin
+    of the \verb+{\includegraphics}+ macro. For an instance \Verb+{[br]}+ for bottom-right.
+    The default is mc meaning middle - center.
+    The second optional argument is given in curly braces just before the left
+    parenthesis. It is a number that stands for the rotation angle as illustrated in
+    the last instance of the \Verb+{\rput}+ macro on the slide.
+    The two optional arguments make \Verb+{\rput}+ more
+    exible than the \Verb+{\put}+ macro
+    of the picture environment.
+    \rput[b](-2,0){%
+    \begin{tikzpicture}[%
+        every node/.style={inner sep=0pt}]
+      \tikzset{image/.style={circle,
+                             fill=red,
+                             minimum size = 4pt,
+                             inner sep    = 0pt,
+                             outer sep    = 1pt}
+                             }
+    \node[inner sep = 1cm] (wrapper){\tikz
+    \node(image) {\pgfornament[scale=1.5,opacity=0.2]{1}};};
+    \end{tikzpicture}}
 
 \begin{tkzexample}[code only,small]
-	\rput[b](-2,0){%
-	\begin{tikzpicture}[%
-		every node/.style={inner sep=0pt}]
-	  \tikzset{image/.style={circle,
-	                         fill=red,
-	                         minimum size = 4pt,
-	                         inner sep    = 0pt,
-	                         outer sep    = 1pt}
-	                         }
-	\node[inner sep = 1cm] (wrapper){\tikz
-	\node(image) {\pgfornament[scale=1.5,opacity=0.2]{1}};};
-	\end{tikzpicture}}
+    \rput[b](-2,0){%
+    \begin{tikzpicture}[%
+        every node/.style={inner sep=0pt}]
+      \tikzset{image/.style={circle,
+                             fill=red,
+                             minimum size = 4pt,
+                             inner sep    = 0pt,
+                             outer sep    = 1pt}
+                             }
+    \node[inner sep = 1cm] (wrapper){\tikz
+    \node(image) {\pgfornament[scale=1.5,opacity=0.2]{1}};};
+    \end{tikzpicture}}
 \end{tkzexample}
 % subsection ex_5_from_pstricks_doc (end)
 
@@ -542,8 +565,8 @@ baseline%
 \rput{30}(2,-6){Tu as de beaux yeux !}
 \rput(3,-3){\myEye}
 \rput(1,-3){\reflectbox{\myEye}}
-   	  \caption{from pstricks again}
-   	  \label{fig:from pstricks again}
+      \caption{from pstricks again}
+      \label{fig:from pstricks again}
 \end{marginfigure}
 \begin{tkzexample}[code only,small]
 \documentclass{scrartcl}
@@ -554,7 +577,7 @@ baseline%
 \rput{30}(7,-5){Tu as de beaux yeux !}
 \rput(8,-2){\myEye}
 \rput(6,-2){\reflectbox{\myEye}}
- \end{document}
+\end{document}
 \end{tkzexample}
 \def\myEye{
 \begin{tikzpicture}
@@ -587,8 +610,8 @@ Utilisation des ancres
    \rput[tl] (5,0){\tikz \draw[red]   (0,0) rectangle +(1,2);}
    \rput[br] (5,0){\tikz \draw[green] (0,0) rectangle +(1,2);}
    \rput[Bl] (5,0){\tikz \draw[orange](0,0) rectangle +(1,2);}
-   	  \caption{ancres}
-   	  \label{fig:ancres}
+      \caption{ancres}
+      \label{fig:ancres}
 \end{marginfigure}
 
 % subsection ex_7_ancres (end)
@@ -599,8 +622,3 @@ Utilisation des ancres
 \printindex
 
 \end{document}
-
-
-
-
-

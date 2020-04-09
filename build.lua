@@ -83,7 +83,7 @@ tdslocations = {
 }
 
 -- Update package date and version
-tagfiles = {"latex/pgfornament.sty", "latex/tikzrput.sty", "README.md"}
+tagfiles = {"latex/pgfornament.sty", "latex/tikzrput.sty", "README.md", "doc/ornament.tex", "doc/tikzrput.tex"}
 
 function update_tag(file, content, tagname, tagdate)
   if string.match(file, "pgfornament.sty$") then

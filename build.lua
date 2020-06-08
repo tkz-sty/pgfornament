@@ -1,8 +1,8 @@
 -- Build script for pgfornament
 
 module = "pgfornament"
-pgfornamv = "1.1"
-pgfornamd = "2020/04/06"
+pgfornamv = "1.2"
+pgfornamd = "2020/05/28"
 tikzrputv = pgfornamv
 tikzrputd = pgfornamd
 

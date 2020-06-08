@@ -1,22 +1,22 @@
 \makeatletter
 \AddToShipoutPicture{%
-\begingroup
+\begingroup 
 \setlength{\@tempdima}{2mm}%
 \setlength{\@tempdimb}{\paperwidth-\@tempdima-1cm}%
 \setlength{\@tempdimc}{\paperheight-\@tempdima}%
 \put(\LenToUnit{\@tempdima},\LenToUnit{\@tempdimc}){%
-  \pgfornament[color=Maroon,anchor=north west,width=1cm]{39}}
+  \pgfornament[color=Maroon,anchor=north west,width=1cm]{39}} 
 \put(\LenToUnit{\@tempdima},\LenToUnit{\@tempdima}){%
   \pgfornament[color=Maroon,anchor=south west,width=1cm,symmetry=h]{39}}
 \put(\LenToUnit{\@tempdimb},\LenToUnit{\@tempdimc}){%
-  \pgfornament[color=Maroon,anchor=north east,width=1cm,symmetry=v]{39}}
+  \pgfornament[color=Maroon,anchor=north east,width=1cm,symmetry=v]{39}} 
 \put(\LenToUnit{\@tempdimb},\LenToUnit{\@tempdima}){%
-  \pgfornament[color=Maroon,anchor=south east,width=1cm,symmetry=c]{39}}
-\endgroup
-}
-\let\strippt\strip@pt
+  \pgfornament[color=Maroon,anchor=south east,width=1cm,symmetry=c]{39}}    
+\endgroup  
+} 
+\let\strippt\strip@pt     
 \makeatother
-
+   
 \newcommand{\eachpageornament}{%
 \begin{picture}(0,0)
 \put(0,0){\pgfornament[width=1cm]{41}};
